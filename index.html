@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country and their cities</title>
+    <link href="main.css" rel="stylesheet">
+</head>
+<body class="bg-sky-400">
+    <header class="h-20 flex justify-center items-center">
+        
+        <h1 class="text-center text-3xl font-bold">Country and their cities</h1>
+    </header>
+    <main class="bg-sky-300">
+        <div id="selectContainer" class="flex justify-center items-center h-20">
+            <select class="w-48 border border-gray-300 rounded-md p-2 text-gray-700 bg-white focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500" name="countryData" id="countryData">
+                <option value="">Select a Country</option>
+            </select>
+        </div>
+        <div id="listContainer" class="ml-8 bg-sky-200">
+            <ol type="1" id="list" class="flex flex-col gap-3 list-decimal hover:list-disc">
+            </ul>
+        </div>
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>
