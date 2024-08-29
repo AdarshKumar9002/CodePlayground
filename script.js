@@ -69,9 +69,6 @@ const getCitiesName = async () => {
 const createListElements = (city) => {
     const LIST_ITEM_ELEMENT = document.createElement("li");
     LIST_ITEM_ELEMENT.classList.add(
-      "border-b-2",
-      "border-gray-300",
-      "bg-blue-100",
       "text-gray-700",
       "text-lg",
       "font-semibold"
