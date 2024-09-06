@@ -1,7 +1,6 @@
 // Import
 
-import axios from "./node_modules/axios/dist/esm/axios.js";
-// import axios from "axios"
+import axios from "axios"
 
 // Elements
 const COUNTRY_DROPDOWN_ELEMENT = document.getElementById("countryData");
@@ -98,6 +97,7 @@ populateCountryDropdown().then((data) => data);
 // get the selected country from dropdown
 const getSelectedCountry = () => {
   countryDropdownValue = COUNTRY_DROPDOWN_ELEMENT.value;
+  return countryDropdownValue;
 };
 
 // Populate city the Dropdown
@@ -112,6 +112,7 @@ const populateCityDropdown = async (selectedCountry) => {
 // get selected city from dropdown
 const getSelectedCity = () => {
   cityDropdownValue = CITY_DROPDOWN_ELEMENT.value;
+  return cityDropdownValue;
 };
 
 // Show histroy of selected history
