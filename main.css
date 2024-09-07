@@ -554,20 +554,20 @@ video {
   --tw-contain-style:  ;
 }
 
-.ml-8 {
-  margin-left: 2rem;
+.static {
+  position: static;
 }
 
 .mt-8 {
   margin-top: 2rem;
 }
 
-.flex {
-  display: flex;
+.mt-4 {
+  margin-top: 1rem;
 }
 
-.h-20 {
-  height: 5rem;
+.flex {
+  display: flex;
 }
 
 .h-40 {
@@ -576,6 +576,10 @@ video {
 
 .w-48 {
   width: 12rem;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .flex-col {
@@ -619,14 +623,9 @@ video {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
-.bg-blue-500 {
+.bg-blue-600 {
   --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
-}
-
-.bg-sky-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(186 230 253 / var(--tw-bg-opacity));
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
 }
 
 .bg-sky-300 {
@@ -642,11 +641,6 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-blue-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
 }
 
 .p-2 {
@@ -682,11 +676,6 @@ video {
   line-height: 2.25rem;
 }
 
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -694,10 +683,6 @@ video {
 
 .font-bold {
   font-weight: 700;
-}
-
-.font-semibold {
-  font-weight: 600;
 }
 
 .text-gray-700 {
@@ -708,6 +693,10 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 header nav li {
@@ -721,17 +710,14 @@ header nav li:hover {
 }
 
 main{
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 160px);
+  max-height: -moz-max-content;
+  max-height: max-content;
 }
 
 .hover\:bg-blue-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(29 78 216 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-blue-900:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 58 138 / var(--tw-bg-opacity));
 }
 
 .focus\:border-blue-500:focus {

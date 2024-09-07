@@ -5,8 +5,8 @@ import axios from "axios"
 // Elements
 const COUNTRY_DROPDOWN_ELEMENT = document.getElementById("countryData");
 const CITY_DROPDOWN_ELEMENT = document.getElementById("cityData");
-const COUNTRY_FORM_ELEMENT = document.getElementById("countryDropdown");
 const CITY_FORM_ELEMENT = document.getElementById("cityDropdown");
+const FIND_HISTORY_ELEMENT = document.getElementById("findHistoryBtn");
 const HISTORY_SECTION_ELEMENT = document.getElementById("history");
 
 // Variables
@@ -124,7 +124,7 @@ const showHistory = (selectedCity) => {
 };
 
 // Country form submit eventlistener
-COUNTRY_FORM_ELEMENT.addEventListener("submit", (event) => {
+COUNTRY_DROPDOWN_ELEMENT.addEventListener('change', (event) => {
   event.preventDefault();
   getSelectedCountry();
   CITY_DROPDOWN_ELEMENT.innerHTML = "";
@@ -136,9 +136,8 @@ COUNTRY_FORM_ELEMENT.addEventListener("submit", (event) => {
 });
 
 // City form submit eventlistener
-CITY_FORM_ELEMENT.addEventListener("submit", (event) => {
+FIND_HISTORY_ELEMENT.addEventListener("click", (event) => {
   event.preventDefault();
   getSelectedCity();
-  CITY_DROPDOWN_ELEMENT.innerHTML = "";
-  showHistory(countryDropdownValue);
+  showHistory(cityDropdownValue);
 });
