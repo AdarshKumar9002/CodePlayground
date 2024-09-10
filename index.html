@@ -1,28 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Country and their cities</title>
-    <link href="main.css" rel="stylesheet">
-</head>
-<body class="bg-sky-400">
-    <header class="h-20 flex justify-center items-center">
-        
-        
-        <h1 class="text-center text-3xl font-bold">Country and their cities</h1>
+    <link href="main.css" rel="stylesheet" />
+  </head>
+  <body class="bg-sky-400">
+    <header class="h-40 flex flex-col gap-3 justify-center items-center">
+      <nav>
+        <ul class="flex gap-3 justify-center items-center flex-wrap">
+          <li><a href="./index.html">Home</a></li>
+          <li>
+            <a href="https://release-01.netlify.app/">release-0.1</a>
+          </li>
+        </ul>
+      </nav>
+
+      <h1 class="text-center text-3xl font-bold">Country and their cities</h1>
     </header>
     <main class="bg-sky-300">
-        <div id="selectContainer" class="flex justify-center items-center h-20">
-            <select class="w-48 border border-gray-300 rounded-md p-2 text-gray-700 bg-white focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500" name="countryData" id="countryData">
-                <option value="">Select a Country</option>
+      <section class="flex flex-col justify-center items-center gap-3 mt-8 ">
+        <!-- ========= Country ========= -->
+        <div
+          id="countryDropdown"
+          class="flex flex-col justify-center items-center gap-2"
+        >
+          <label for="countryData" class="font-bold">Country</label>
+          <div
+            id="selectContry"
+            class="flex flex-col justify-center items-center gap-2"
+          >
+            <select
+              class="w-48 border border-gray-300 rounded-md p-2 text-gray-700 bg-white focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              name="countryData"
+              id="countryData"
+              required
+            >
+              <option value="">Select a Country</option>
             </select>
+          </div>
         </div>
-        <div id="listContainer" class="ml-8 bg-sky-200">
-            <ol id="list" class="flex flex-col justify-center items-center gap-3">
-            </ul>
+
+        <!-- ========= City ========= -->
+        <form
+          id="cityDropdown"
+          class="flex flex-col justify-center items-center  gap-2"
+        >
+          <label for="cityData" class="font-bold">City</label>
+          <div
+            id="selectCity"
+            class="flex flex-col justify-center items-center gap-2"
+          >
+            <select
+              class="w-48 border border-gray-300 rounded-md p-2 text-gray-700 bg-white focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              name="cityData"
+              id="cityData"
+              required
+            >
+              <option value="">Select a City</option>
+            </select>
+          </div>
+         
+        </form>
+        <div class="flex items-center justify-center w-full mt-4">
+          <button
+          id="findHistoryBtn"
+            type="submit"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Find History
+          </button>
         </div>
+      
+      </section>
+
+      <section
+        id="history"
+        class="flex flex-col justify-center items-center px-4 py-4"
+      >
+        <h2 id="historyTitle" class="text-center text-2xl font-bold"></h2>
+        <p id="cityHistory" class="text-center text-xl"></p>
+      </section>
     </main>
-    <script src="./script.js"></script>
-</body>
+    <script type="module" src="./dist/bundle.js"></script>
+  </body>
 </html>
