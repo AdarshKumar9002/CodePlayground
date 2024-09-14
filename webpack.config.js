@@ -1,23 +1,61 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: './script.js', // Entry point for your application
+  mode: 'development',
+  entry: './src/assets/script/script.js',
   output: {
-    filename: 'bundle.js', // Output bundled file
-    path: path.resolve(__dirname, 'dist'), // Output directory
+    filename: 'assets/script/bundle-[hash].js',
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
-    rules: []
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+        ],
+      },
+      {
+        test: /\.html$/,
+        use: ['html-loader'],
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[hash].[ext]',
+              outputPath: 'assets/images',
+            },
+          },
+        ],
+      },
+    ],
   },
-  resolve: {
-    extensions: ['.js']
-  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({ filename: 'assets/style/bundle-[hash].css' }),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: 'index.html',
+    }),
+  ],
   devServer: {
     static: {
-      directory: path.join(__dirname), // Serve files from the root directory
+      directory: path.resolve(__dirname, 'dist'),
     },
-    compress: true,
+    hot: true,
+    open: true,
     port: 8080,
   },
-  mode: 'development' // Use 'production' for optimized builds
+  resolve: {
+    extensions: ['.js', '.jsx', '.json'],
+    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+  },
 };
