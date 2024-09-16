@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* .version:hover .version__release-list{
+    display: flex;
+} */
+section {
+    /* background: white;
+    box-shadow: inset lightgray 0px 0px 10px 10px; */
+    margin-bottom: 3em;
+}
+header nav li {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: blue; 
+}
+header nav li:hover {
+    text-decoration: underline;
+}
+
+#findHistoryBtn:disabled {
+    background-color: #b3b3b3;  /* Light grey background */
+    cursor: not-allowed;        /* Cursor shows as 'not-allowed' */
+    opacity: 0.5;               /* Make the button semi-transparent */
+    pointer-events: none;       /* Disable any pointer events */
+}
+
+main{
+    min-height: calc(100vh - 60px);
+    max-height: max-content;
+}
