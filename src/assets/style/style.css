@@ -11,6 +11,17 @@ section {
     box-shadow: inset lightgray 0px 0px 10px 10px; */
     margin-bottom: 3em;
 }
+@media screen and (max-width: 1023px) {
+    header {
+        flex-direction: column;
+    }
+    .drop-down-container {
+        flex-direction: column;
+    }
+    .display-container {
+        flex-direction: column;
+    }
+}
 header nav li {
     font-size: 1.3em;
     font-weight: bold;
