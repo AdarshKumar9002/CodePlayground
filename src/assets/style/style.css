@@ -22,6 +22,9 @@ section {
 
 
 @media screen and (min-width: 1024px) {
+    header {
+        flex-direction: row;
+    }
     #city-lists {
         grid-template-columns: repeat(3, auto);
     }
