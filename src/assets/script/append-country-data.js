@@ -16,12 +16,6 @@ class AppendCountryData {
       DropdownOptionHtml.dropdownOption(this.COUNTRY_DROPDOWN_ELEMENT, name);
     });
   }
-
-  // attachListeners() {
-  //   this.COUNTRY_DROPDOWN_ELEMENT.addEventListener('change', ()=> {
-  //       this.selectedCountry = this.COUNTRY_DROPDOWN_ELEMENT.value;
-  //   })
-  // }
 }
 
 export default AppendCountryData;

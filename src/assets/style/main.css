@@ -640,6 +640,10 @@ video {
   display: inline-flex;
 }
 
+.grid {
+  display: grid;
+}
+
 .hidden {
   display: none;
 }
@@ -672,8 +676,20 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
 .flex-col {
   flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .items-center {
@@ -944,23 +960,7 @@ video {
 } */
 
 section {
-  /* background: white;
-    box-shadow: inset lightgray 0px 0px 10px 10px; */
   margin-bottom: 3em;
-}
-
-@media screen and (max-width: 1023px) {
-  header {
-    flex-direction: column;
-  }
-
-  .drop-down-container {
-    flex-direction: column;
-  }
-
-  .display-container {
-    flex-direction: column;
-  }
 }
 
 header nav li {
@@ -975,13 +975,9 @@ header nav li:hover {
 
 #findHistoryBtn:disabled {
   background-color: #b3b3b3;
-  /* Light grey background */
   cursor: not-allowed;
-  /* Cursor shows as 'not-allowed' */
   opacity: 0.5;
-  /* Make the button semi-transparent */
   pointer-events: none;
-  /* Disable any pointer events */
 }
 
 main{
@@ -1052,6 +1048,24 @@ main{
   opacity: 0.5;
 }
 
+@media (min-width: 640px) {
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   .dark\:border-gray-700 {
     --tw-border-opacity: 1;
@@ -1088,3 +1102,4 @@ main{
     --tw-ring-color: rgb(29 78 216 / var(--tw-ring-opacity));
   }
 }
+
