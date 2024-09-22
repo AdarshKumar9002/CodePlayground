@@ -9,6 +9,35 @@
 section {
     margin-bottom: 3em;
 }
+
+#city-lists{
+    grid-template-columns: auto;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    #city-lists {
+        grid-template-columns: auto auto;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    #city-lists {
+        grid-template-columns: repeat(3, auto);
+    }
+}
+@media screen and (max-width: 1024px) {
+    header {
+        flex-direction: column;
+    }
+    .drop-down-container {
+        flex-direction: column;
+    }
+    .display-container {
+        flex-direction: column;
+    }
+
+}
 header nav li {
     font-size: 1.3em;
     font-weight: bold;
@@ -29,4 +58,3 @@ main{
     min-height: calc(100vh - 60px);
     max-height: max-content;
 }
-
