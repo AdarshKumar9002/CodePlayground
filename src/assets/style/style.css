@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* .version:hover .version__release-list{
+    display: flex;
+} */
+section {
+    margin-bottom: 3em;
+}
+
+#city-lists{
+    grid-template-columns: auto;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    #city-lists {
+        grid-template-columns: auto auto;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    #city-lists {
+        grid-template-columns: repeat(3, auto);
+    }
+}
+@media screen and (max-width: 1024px) {
+    header {
+        flex-direction: column;
+    }
+    .drop-down-container {
+        flex-direction: column;
+    }
+    .display-container {
+        flex-direction: column;
+    }
+
+}
+header nav li {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: blue; 
+}
+header nav li:hover {
+    text-decoration: underline;
+}
+
+#findHistoryBtn:disabled {
+    background-color: #b3b3b3; 
+    cursor: not-allowed;        
+    opacity: 0.5;               
+    pointer-events: none;       
+}
+
+main{
+    min-height: calc(100vh - 60px);
+    max-height: max-content;
+}
+
