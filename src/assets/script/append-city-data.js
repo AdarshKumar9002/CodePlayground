@@ -6,7 +6,6 @@ class AppendCityData {
     constructor() {
         this.COUNTRY_DROPDOWN_ELEMENT = document.getElementById("countryData");
         this.CITY_DROPDOWN_ELEMENT = document.getElementById("cityData");
-        this.FIND_HISTORY_BTN_ELEMENT = document.getElementById("findHistoryBtn");
         this.cityNames = new GetCityName();
         this.selectedCountry = "";
         this.selectedCity = "";
@@ -33,7 +32,6 @@ class AppendCityData {
             "afterbegin",
             `<option>Select a City</option>`
         );
-        this.FIND_HISTORY_BTN_ELEMENT.setAttribute("disabled", "true"); // Disable button initially
     }
 
     static async renderCityCards(selectedCountry) {
@@ -47,11 +45,6 @@ class AppendCityData {
             this.resetDropdown();
             this.appendCityOptions(this.selectedCountry);
             AppendCityData.renderCityCards(this.selectedCountry);
-        });
-
-        this.CITY_DROPDOWN_ELEMENT.addEventListener("change", () => {
-            const citySelected = this.CITY_DROPDOWN_ELEMENT.value !== "Select a City";
-            this.FIND_HISTORY_BTN_ELEMENT.disabled = !citySelected; 
         });
     }
 }
