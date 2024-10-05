@@ -5,20 +5,26 @@ import GetCountryName from "./get-country-list.js";
 import AppendCountryData from "./append-country-data.js";
 import GetCityName from "./get-city-list.js";
 import AppendCityData from "./append-city-data.js";
-import ShowDropdownResult from "./dropdown-result.js";
-import CityList from "./append-city-list.js";
+import {
+  CITY_DROPDOWN_ELEMENT,
+  COUNTRY_DROPDOWN_ELEMENT,
+  renderCards,
+  renderSelectedCityCard,
+} from "./render-cards.js";
 
 class App {
   constructor() {
     this.Header = new Header();
     this.getCountryNames = new GetCountryName();
-    this.appendCountryData = new AppendCountryData;
+    this.appendCountryData = new AppendCountryData();
     this.getCityNames = new GetCityName();
     this.appendCityData = new AppendCityData();
-    this.card = new ShowDropdownResult();
   }
 }
 
 new App();
 
-const a = new CityList();
+
+document.addEventListener('DOMContentLoaded', renderCards);
+COUNTRY_DROPDOWN_ELEMENT.addEventListener("change", renderCards);
+CITY_DROPDOWN_ELEMENT.addEventListener("change", renderSelectedCityCard);

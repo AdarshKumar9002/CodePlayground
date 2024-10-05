@@ -1,3 +1,6 @@
+/*!***********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/assets/style/main.css ***!
+  \***********************************************************************************************************************/
 /*
 ! tailwindcss v3.4.11 | MIT License | https://tailwindcss.com
 */
@@ -957,10 +960,6 @@ section {
 }
 
 @media screen and (min-width: 1024px) {
-  header {
-    flex-direction: row;
-  }
-
   #city-lists {
     grid-template-columns: repeat(3, auto);
   }
@@ -1112,3 +1111,5 @@ main{
     --tw-ring-color: rgb(29 78 216 / var(--tw-ring-opacity));
   }
 }
+
+
