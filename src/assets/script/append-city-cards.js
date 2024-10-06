@@ -11,7 +11,7 @@ class CityCards {
     this.CITY_LIST_CONTAINER = document.getElementById("city-lists");
   }
 
-  //   render cards of all the cities
+  // Render cards of all the cities
   async renderAllCards() {
     try {
       const cities = await this.cityCards.getCitiesByCountry();
@@ -36,7 +36,7 @@ class CityCards {
     }
   }
 
-  //   Render selected country cards
+   // Render selected country cards
   async renderSelctedCoutnryCards(selectedCountry) {
     try {
       const cities = await this.cityCards.getCitiesByCountry();
@@ -57,7 +57,7 @@ class CityCards {
     }
   }
 
-  //   render the card of selcted city
+  // Render the card of selcted city
   async renderSelectedCityCard(selectedCity) {
     this.CITY_LIST_CONTAINER.innerHTML = "";
     this.cardMarkup.render(this.CITY_LIST_CONTAINER, selectedCity);
