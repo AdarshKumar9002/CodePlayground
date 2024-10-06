@@ -1,4 +1,4 @@
-import CityCards from "./append-city-list.js";
+import CityCards from "./append-city-cards.js";
 
 const COUNTRY_DROPDOWN_ELEMENT = document.getElementById("countryData");
 const CITY_DROPDOWN_ELEMENT = document.getElementById("cityData");
