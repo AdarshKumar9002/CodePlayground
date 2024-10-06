@@ -7,9 +7,9 @@ class AppendCountryData {
     this.countryNames = new GetCountryName();
     this.selectedCountry = '';
     this.appendCountryOptions();
-    // this.attachListeners();
   }
 
+  // Create country name option in the country dropdown 
   async appendCountryOptions() {
     const countryList = await this.countryNames.countryNames();
     countryList.forEach((name) => {

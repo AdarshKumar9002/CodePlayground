@@ -3,6 +3,7 @@ class CardMarkup {
       return this.card(element, title);
     }
   
+   
     card(appendContainer, title) {
       const CARD_ITEM_ELEMENT = document.createElement("div");
       CARD_ITEM_ELEMENT.className =

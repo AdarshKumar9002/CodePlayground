@@ -1,6 +1,5 @@
 import GetCityName from "./get-city-list.js";
 import DropdownOptionHtml from "./dropdown-markup.js";
-import CityCards from "./append-city-list.js";
 
 class AppendCityData {
   constructor() {
@@ -13,7 +12,8 @@ class AppendCityData {
     this.resetDropdown();
   }
 
-  async appendCityOptions(selectedCountry) {
+  // Add citylist in the City dropdown
+  async populateCityDropdown(selectedCountry) {
     try {
       const countyList = await this.cityNames.getCitiesByCountry();
       const selectedCountryCities = countyList[selectedCountry] || [];
@@ -26,6 +26,7 @@ class AppendCityData {
     }
   }
 
+  // Empty the City dropdown and then add a select a city option
   resetDropdown() {
     this.CITY_DROPDOWN_ELEMENT.innerHTML = "";
     this.CITY_DROPDOWN_ELEMENT.insertAdjacentHTML(
@@ -34,13 +35,13 @@ class AppendCityData {
     );
   }
 
-
+  // Event listeners
   attachListeners() {
     this.COUNTRY_DROPDOWN_ELEMENT.addEventListener("change", () => {
       this.selectedCountry = this.COUNTRY_DROPDOWN_ELEMENT.value;
-      this.COUNTRY_DROPDOWN_ELEMENT.value=this.selectedCountry;
+      this.COUNTRY_DROPDOWN_ELEMENT.value = this.selectedCountry;
       this.resetDropdown();
-      this.appendCityOptions(this.selectedCountry);
+      this.populateCityDropdown(this.selectedCountry);
     });
   }
 }
