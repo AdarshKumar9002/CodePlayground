@@ -1,17 +1,20 @@
-import axios from "axios"
-
-import links from './vendor.js'
+import links from "./vendor.js";
 
 class FetchLocationData {
+  constructor() {
+    this.url = links.countyCityList;
+  }
 
-    constructor() {
-        this.url = links.countyCityList;
-    }
+  async getLocatoins() {
+    try {
+      const request = await $.get(this.url);
+      const response = await JSON.parse(request);
+      return response;
+    } catch (error) {
+        console.log(error);
 
-    async getLocatoins() {
-        const response = await axios.get(this.url);
-        return response.data;
     }
+  }
 }
 
 export default FetchLocationData;

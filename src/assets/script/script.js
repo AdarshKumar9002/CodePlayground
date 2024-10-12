@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 import "../style/main.css";
 
 import Header from "./header.js";
@@ -11,6 +13,7 @@ import {
   renderCards,
   renderSelectedCityCard,
 } from "./render-cards.js";
+import FetchLocationData from './fetch-location-data.js';
 
 class App {
   constructor() {
@@ -28,3 +31,8 @@ new App();
 document.addEventListener('DOMContentLoaded', renderCards);
 COUNTRY_DROPDOWN_ELEMENT.addEventListener("change", renderCards);
 CITY_DROPDOWN_ELEMENT.addEventListener("change", renderSelectedCityCard);
+
+
+const a = new FetchLocationData();
+
+console.log(a.getLocatoins());

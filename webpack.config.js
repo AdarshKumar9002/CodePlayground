@@ -2,13 +2,13 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const { sources } = require('webpack');
+const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
   entry: './src/assets/script/script.js',
   output: {
-    filename: 'assets/script/bundle-[hash].js',
+    filename: 'assets/script/bundle-[fullhash].js', // Change [hash] to [fullhash]
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
@@ -36,10 +36,14 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({ filename: 'assets/style/bundle-[hash].css' }),
+    new MiniCssExtractPlugin({ filename: 'assets/style/bundle-[fullhash].css' }), // Change [hash] to [fullhash]
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
     }),
   ],
   devServer: {
