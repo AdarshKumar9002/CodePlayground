@@ -1,24 +1,24 @@
 class Header {
     constructor() {
-        this.DROPDOWN_VERSION_ELEMENT = document.querySelectorAll('.version');
+        this.DROPDOWN_VERSION_ELEMENT = $('.version');
         this.attachListeners();
     }
 
     dropdown(event) {
-        const version = event.currentTarget.closest('.version'); 
-        const releaseList = version.querySelector('.version__release-list');
-        
-        if (releaseList.classList.contains('hidden')) {
-            releaseList.classList.remove('hidden');
+        const version = $(event.currentTarget).closest('.version'); 
+        const releaseList = version.find('.version__release-list');
+
+        if (releaseList.hasClass('hidden')) {
+            releaseList.removeClass('hidden');
         } else {
-            releaseList.classList.add('hidden');
+            releaseList.addClass('hidden');
         }
     }
 
     attachListeners() {
-        this.DROPDOWN_VERSION_ELEMENT.forEach(element => {
-            const button = element.querySelector('.version-btn');
-            button.addEventListener('click', this.dropdown.bind(this));
+        this.DROPDOWN_VERSION_ELEMENT.each((index, element) => {
+            const button = $(element).find('.version-btn');
+            button.on('click', (event) => this.dropdown(event));
         });
     }
 }

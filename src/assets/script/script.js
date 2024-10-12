@@ -32,7 +32,3 @@ document.addEventListener('DOMContentLoaded', renderCards);
 COUNTRY_DROPDOWN_ELEMENT.addEventListener("change", renderCards);
 CITY_DROPDOWN_ELEMENT.addEventListener("change", renderSelectedCityCard);
 
-
-const a = new FetchLocationData();
-
-console.log(a.getLocatoins());
