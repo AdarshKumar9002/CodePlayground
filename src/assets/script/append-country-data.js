@@ -3,7 +3,7 @@ import DropdownOptionHtml from "./dropdown-markup.js";
 
 class AppendCountryData {
   constructor() {
-      this.COUNTRY_DROPDOWN_ELEMENT = document.getElementById("countryData");
+      this.COUNTRY_DROPDOWN_ELEMENT = $("#countryData");
     this.countryNames = new GetCountryName();
     this.selectedCountry = '';
     this.appendCountryOptions();
