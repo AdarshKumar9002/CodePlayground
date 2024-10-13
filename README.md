@@ -9,7 +9,13 @@ This repository is a practice project for learning and applying various web deve
 
 ## Features by Release
 
-### Release 0.1:
+### release 0.2:
+- **Feature**: Added a city dropdown it will contain the name of cites of selected country. After selecting a city and clicking on Find History button will show you history(dummy text) of selected city. 
+
+-  **Changes**: replaced featch API with axios.
+
+
+### release 0.1:
 - **Feature**: Selecting a country from dropdown will show the city list of that country.
 
 - **Web Topics**:
