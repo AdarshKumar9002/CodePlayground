@@ -8,7 +8,7 @@ class CityCards {
     this.cityCards = new GetCityName();
     this.countrylist = new GetCountryName();
 
-    this.CITY_LIST_CONTAINER = document.getElementById("city-lists");
+    this.CITY_LIST_CONTAINER = $("#city-lists");
   }
 
   // Render cards of all the cities
@@ -26,7 +26,7 @@ class CityCards {
         });
       });
 
-      this.CITY_LIST_CONTAINER.innerHTML = "";
+      this.CITY_LIST_CONTAINER.empty = "";
 
       allCities.forEach((city) => {
         this.cardMarkup.render(this.CITY_LIST_CONTAINER, city);
@@ -47,7 +47,7 @@ class CityCards {
         return;
       }
 
-      this.CITY_LIST_CONTAINER.innerHTML = "";
+      this.CITY_LIST_CONTAINER.empty = "";
 
       selectedCountryCities.forEach((city) => {
         this.cardMarkup.render(this.CITY_LIST_CONTAINER, city);
@@ -59,7 +59,7 @@ class CityCards {
 
   // Render the card of selcted city
   async renderSelectedCityCard(selectedCity) {
-    this.CITY_LIST_CONTAINER.innerHTML = "";
+    this.CITY_LIST_CONTAINER.empty = "";
     this.cardMarkup.render(this.CITY_LIST_CONTAINER, selectedCity);
   }
 }
