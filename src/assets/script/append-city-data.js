@@ -3,8 +3,8 @@ import DropdownOptionHtml from "./dropdown-markup.js";
 
 class AppendCityData {
   constructor() {
-    this.COUNTRY_DROPDOWN_ELEMENT = document.getElementById("countryData");
-    this.CITY_DROPDOWN_ELEMENT = document.getElementById("cityData");
+    this.COUNTRY_DROPDOWN_ELEMENT = $("#countryData");
+    this.CITY_DROPDOWN_ELEMENT = $("#cityData");
     this.cityNames = new GetCityName();
     this.selectedCountry = "";
     this.selectedCity = "";
@@ -28,18 +28,14 @@ class AppendCityData {
 
   // Empty the City dropdown and then add a select a city option
   resetDropdown() {
-    this.CITY_DROPDOWN_ELEMENT.innerHTML = "";
-    this.CITY_DROPDOWN_ELEMENT.insertAdjacentHTML(
-      "afterbegin",
-      `<option>Select a City</option>`
-    );
+    this.CITY_DROPDOWN_ELEMENT.empty("");
+    this.CITY_DROPDOWN_ELEMENT.prepend(`<option>Select a City</option>`);
   }
 
   // Event listeners
   attachListeners() {
-    this.COUNTRY_DROPDOWN_ELEMENT.addEventListener("change", () => {
-      this.selectedCountry = this.COUNTRY_DROPDOWN_ELEMENT.value;
-      this.COUNTRY_DROPDOWN_ELEMENT.value = this.selectedCountry;
+    this.COUNTRY_DROPDOWN_ELEMENT.on("change", () => {
+      this.selectedCountry = this.COUNTRY_DROPDOWN_ELEMENT.val();
       this.resetDropdown();
       this.populateCityDropdown(this.selectedCountry);
     });
