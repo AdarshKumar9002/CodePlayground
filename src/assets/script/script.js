@@ -28,7 +28,8 @@ class App {
 new App();
 
 
-document.addEventListener('DOMContentLoaded', renderCards);
-COUNTRY_DROPDOWN_ELEMENT.addEventListener("change", renderCards);
-CITY_DROPDOWN_ELEMENT.addEventListener("change", renderSelectedCityCard);
+$(document).ready(renderCards); // Runs renderCards when the DOM is fully loaded
+COUNTRY_DROPDOWN_ELEMENT.on("change", renderCards);
+CITY_DROPDOWN_ELEMENT.on("change", renderSelectedCityCard);
+
 
