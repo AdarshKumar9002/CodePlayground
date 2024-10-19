@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodePlayground</title>
+  <script defer src="assets/script/bundle-e9d586ef05eb0e25ab98.js"></script><link href="assets/style/bundle-e9d586ef05eb0e25ab98.css" rel="stylesheet"></head>
+  <body class="bg-gradient-to-r from-blue-500 to-blue-300 min-h-screen text-gray-800">
+    <header class="flex flex-col md:flex-row gap-6 justify-between items-center py-6 px-8 bg-white shadow-md">
+      <div class="logo">
+        <h1>
+          <a href="./index.html" class="text-3xl font-extrabold text-blue-800 hover:text-blue-600 transition">
+            CodePlayground
+          </a>
+        </h1>
+      </div>
+
+      <nav>
+        <ul class="flex gap-6">
+          <li><a href="./index.html" class="text-lg text-black font-bold hover:text-blue-600 transition">Home</a></li>
+          <li class="relative version" id="version-0">
+            <button class="text-lg text-black font-bold hover:text-blue-600 transition focus:outline-none version-btn">
+              Version 0
+            </button>
+            <div class="absolute left-0 mt-3 w-48 bg-white shadow-md rounded-md hidden version__release-list">
+              <a
+                href="https://release-01.netlify.app/"
+                class="block px-4 py-2 text-gray-700 hover:bg-blue-100 rounded-t-md transition"
+                >release-0.1</a
+              >
+              <a
+                href="https://release-02.netlify.app/"
+                class="block px-4 py-2 text-gray-700 hover:bg-blue-100 rounded-b-md transition"
+                >release-0.2</a
+              >
+              <a
+                href="https://release-03.netlify.app/"
+                class="block px-4 py-2 text-gray-700 hover:bg-blue-100 rounded-b-md transition"
+                >release-0.3</a
+              >
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <a href="https://github.com/AdarshKumar9002/find-city-names.git" aria-label="go to github repo" target="_blank">
+       <img src="assets/images/github-icon.8bbb8f09b1a2192f49f0.svg" alt="" width="30" height="30" >
+      </a>
+    </header>
+    <main class="px-8">
+      <section class="py-8">
+        <div class="flex flex-col md:flex-row justify-center items-center gap-8 drop-down-container">
+          <!-- ========= Country ========= -->
+          <div
+            id="countryDropdown"
+            class="flex flex-col justify-center items-center gap-3"
+          >
+            <label for="countryData" class="font-bold text-lg">Country</label>
+            <div id="selectContry">
+              <select
+                class="w-56 border border-gray-300 rounded-lg p-2 bg-white focus:border-blue-500 focus:ring-blue-500 transition"
+                name="countryData"
+                id="countryData"
+                required
+              >
+                <option value="">Select a Country</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- ========= City ========= -->
+          <form
+            id="cityDropdown"
+            class="flex flex-col justify-center items-center gap-3"
+          >
+            <label for="cityData" class="font-bold text-lg">City</label>
+            <div id="selectCity">
+              <select
+                class="w-56 border border-gray-300 rounded-lg p-2 bg-white focus:border-blue-500 focus:ring-blue-500 transition"
+                name="cityData"
+                id="cityData"
+                required
+              >
+                <option value="">Select a City</option>
+              </select>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- <section class="flex justify-around items-center py-8 gap-6 display-container">
+        <div id="selectedByDropdown" class=" flex flex-col items-center text-center w-full">
+          <h2 class="text-4xl font-bold text-gray-900 mb-6">Dropdown</h2>
+        </div>
+      </section> -->
+
+
+      <!-- ========= City Cards ========= -->
+
+      <section class="flex justify-around items-center py-8 gap-6 display-container">
+      <div id="city-lists" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+        
+      </div>
+      </section>
+      
+    </main>
+  </body>
+</html>
